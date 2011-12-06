@@ -20,7 +20,7 @@
         var hashes = urlParams.split('&');
         for(i = 0; i < hashes.length; i++){
             hash = hashes[i].split('=');
-            vars[hash[0]] = hash[1];
+            vars[hash[0]] = decodeURIComponent(hash[1]).replace(/\+/g, ' ');
         }
         return vars;
     };

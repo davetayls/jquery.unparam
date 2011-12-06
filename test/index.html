@@ -28,6 +28,13 @@
                         bar: "two"
                     });
                 });
+                it("should return unencoded params", function() {
+                    expect(jQuery.unparam('foo=one+and&bar=two%20and'))
+                    .toEqual({
+                        foo: "one and",
+                        bar: "two and"
+                    });
+                });
             });
         </script>
         <script>
